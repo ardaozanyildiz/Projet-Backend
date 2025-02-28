@@ -1,8 +1,6 @@
 package com.example.backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
@@ -21,4 +19,7 @@ public class Question {
 
     @OneToMany
     List<Reponses> reponses;
+    @ManyToOne
+    @JoinColumn(name = "quizz_id")
+    Quizz quizz;
 }

@@ -1,16 +1,19 @@
-package reda.controller;
+package com.example.backend.Controllers;
 
+
+import com.example.backend.Repos.QuestionRepository;
+import com.example.backend.model.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import reda.model.Question;
-import reda.repositories.QuestionRepository;
+
+
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/questions")
 @CrossOrigin
-public class QuestionController {
+public class QuestionsController {
 
     @Autowired
     private QuestionRepository questionRepository;
@@ -21,7 +24,7 @@ public class QuestionController {
         return questionRepository.findAll();
     }
 
-    D
+
     @GetMapping("/{id}")
     public Question getQuestionById(@PathVariable Long id) {
         return questionRepository.findById(id)

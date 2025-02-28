@@ -1,7 +1,10 @@
-package com.example.backend.controller;
+package com.example.backend.Controllers;
 
-import com.example.backend.model.Response;
-import com.example.backend.repository.ResponseRepository;
+import com.example.backend.Repos.ReponsesRepository;
+import com.example.backend.model.Reponses;
+
+
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,26 +12,26 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/responses")
-public class ResponseController {
+public class ReponsesController {
 
     @Autowired
-    private ResponseRepository responseRepository;
+    private ReponsesRepository reponsesRepository;
 
    
     @GetMapping
-    public List<Response> getAllResponses() {
-        return responseRepository.findAll();
+    public List<Reponses> getAllReponses() {
+        return reponsesRepository.findAll();
     }
 
     
     @GetMapping("/category/{category}")
-    public List<Response> getResponsesByCategory(@PathVariable String category) {
-        return responseRepository.findByQuestion_Category(category);
+    public List<Reponses> getResponsesByCategory(@PathVariable String category) {
+        return reponsesRepository.findByQuestion_Category(category);
     }
 
     
     @GetMapping("/question/{questionId}")
-    public List<Response> getResponsesByQuestion(@PathVariable Long questionId) {
-        return responseRepository.findByQuestion_Id(questionId);
+    public List<Reponses> getResponsesByQuestion(@PathVariable Long questionId) {
+        return reponsesRepository.findByQuestion_Id(questionId);
     }
 }

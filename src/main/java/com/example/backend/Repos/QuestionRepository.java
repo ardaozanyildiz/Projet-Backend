@@ -1,7 +1,8 @@
-package reda.repositories;
+package com.example.backend.Repos;
 
+import com.example.backend.model.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
-import reda.model.Question;
+
 
 import java.util.List;
 

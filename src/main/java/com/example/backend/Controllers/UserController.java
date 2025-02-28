@@ -1,7 +1,8 @@
-package com.example.backend.controller;
+package com.example.backend.Controllers;
 
+import com.example.backend.Repos.UserRepository;
 import com.example.backend.model.User;
-import com.example.backend.repository.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
