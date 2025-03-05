@@ -15,6 +15,7 @@ public class Quizz {
     private Long id;
     private String title;
     private String category;
+    private Long time;
 
 
     @OneToMany
